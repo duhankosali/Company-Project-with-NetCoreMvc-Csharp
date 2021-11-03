@@ -1,0 +1,34 @@
+﻿@using ProjectCore.Models
+@model List<Department>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h2>Department Table</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Department</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Details</th>
+    </tr>
+
+
+    @foreach (var x in Model)
+    {
+<tr>
+    <td>@x.DepartmentId</td>
+    <td>@x.DepartmentName</td>
+    <td> <a href="/department/DeleteDepartment/@x.DepartmentId" class="btn btn-danger">Delete</a> </td>
+    <td> <a href="/department/ShowDepartment/@x.DepartmentId" class="btn btn-success">Update</a> </td>
+    <td> <a href="/department/DepartmentDetails/@x.DepartmentId" class="btn btn-info">Details</a> </td>
+</tr>
+
+    }
+
+</table>
+<a href="/Department/NewDepartment" class="btn btn-primary">New Department</a>

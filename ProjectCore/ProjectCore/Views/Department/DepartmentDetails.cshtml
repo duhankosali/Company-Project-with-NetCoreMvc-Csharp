@@ -1,0 +1,37 @@
+﻿@using ProjectCore.Models
+@model List<Employee>
+
+
+@{
+    ViewData["Title"] = "DepartmentDetails";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<h2>@ViewBag.depName Departmanı</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Department</th>
+        
+    </tr>
+
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.EmployeeId</td>
+            <td>@x.EmployeeName</td>
+            <td>@x.EmployeeCity</td>
+            
+            
+
+        </tr>
+
+    }
+
+</table>
+
+

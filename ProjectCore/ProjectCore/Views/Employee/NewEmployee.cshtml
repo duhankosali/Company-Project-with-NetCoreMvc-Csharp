@@ -1,0 +1,30 @@
+﻿@model ProjectCore.Models.Employee
+
+@{
+    ViewData["Title"] = "NewEmployee";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@*"/Employee/NewEmployee" linkine bağlı olan kısım*@
+
+<h2>New Employee</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <b>Employee Name</b>
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+    <br />
+
+    <b>City</b>
+    @Html.TextBoxFor(x => x.EmployeeCity, new { @class = "form-control" })
+    <br />
+
+    <b>Department</b>
+    @Html.DropDownListFor(x=>x.Department.DepartmentId, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Add Employee</button>
+
+</form>
+

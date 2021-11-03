@@ -1,0 +1,21 @@
+﻿@model ProjectCore.Models.Department
+
+@{
+    ViewData["Title"] = "NewDepartment";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@*"/Department/NewDepartment" linkine bağlı olan kısım*@
+
+<h2>New Department</h2>
+<br />
+
+<form class="form-group" method="post">
+
+    <b>Department Name</b>
+    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Add Department</button>
+
+</form>
+
